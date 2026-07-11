@@ -1,6 +1,7 @@
 import portrait from "@/assets/dr-whitfield.jpg";
 import clinic from "@/assets/clinic-interior.jpg";
 import room from "@/assets/treatment-room.jpg";
+import { SectionLabel } from "@/components/site/SectionLabel";
 
 const bullets = [
   {
@@ -19,8 +20,8 @@ const bullets = [
 
 export function Trust() {
   return (
-    <section id="physician" className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
+    <section id="physician" className="hairline-top">
+      <div className="section-padding mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-16">
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-muted">
             <img
@@ -33,19 +34,17 @@ export function Trust() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              The Physician
-            </p>
+            <SectionLabel index="02">The Physician</SectionLabel>
             <h2 className="font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
               Dr. Amara Whitfield
             </h2>
-            <p className="mt-3 text-sm uppercase tracking-[0.18em] text-primary">
+            <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
               MBBS · GMC-registered
             </p>
 
             <ul className="mt-10 space-y-6">
               {bullets.map((b) => (
-                <li key={b.title} className="border-t border-border pt-5">
+                <li key={b.title} className="hairline-top pt-5">
                   <h3 className="font-serif text-xl tracking-tight">{b.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                     {b.body}

@@ -1,3 +1,6 @@
+import { BookButton } from "@/components/site/BookButton";
+import { SectionLabel } from "@/components/site/SectionLabel";
+
 type Treatment = {
   name: string;
   category: "Preventative" | "Corrective" | "Rejuvenating";
@@ -31,13 +34,11 @@ const treatments: Treatment[] = [
 
 export function Treatments() {
   return (
-    <section id="treatments" className="border-t border-border bg-card">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
+    <section id="treatments" className="hairline-top bg-card">
+      <div className="section-padding mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mb-12 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
           <div>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              Consultations
-            </p>
+            <SectionLabel index="01">Consultations</SectionLabel>
             <h2 className="max-w-xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
               Book a treatment consultation
             </h2>
@@ -51,10 +52,10 @@ export function Treatments() {
           {treatments.map((t) => (
             <article
               key={t.name}
-              className="group flex flex-col rounded-sm border border-border bg-background p-6 transition-colors hover:border-primary/40 sm:p-7"
+              className="group flex flex-col rounded-sm border border-border bg-background p-6 transition-colors hover:border-foreground/20 sm:p-7"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-primary">
+                <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                   {t.category}
                 </span>
                 <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -66,7 +67,7 @@ export function Treatments() {
                 {t.name}
               </h3>
 
-              <dl className="mt-6 space-y-2 border-t border-border pt-5 text-sm">
+              <dl className="mt-6 space-y-2 hairline-top pt-5 text-sm">
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Duration</dt>
                   <dd>{t.duration}</dd>
@@ -86,18 +87,15 @@ export function Treatments() {
               <div className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
                 <span
                   aria-hidden
-                  className="inline-block h-1.5 w-1.5 rounded-full bg-primary"
+                  className="inline-block h-1.5 w-1.5 rounded-full bg-muted-foreground/60"
                 />
                 {t.availability}
               </div>
 
               {/* TODO: replace #book with real booking URL */}
-              <a
-                href="#book"
-                className="mt-7 inline-flex items-center justify-center rounded-sm bg-primary px-4 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary/90"
-              >
+              <BookButton size="card" className="mt-7">
                 Book consultation
-              </a>
+              </BookButton>
             </article>
           ))}
         </div>

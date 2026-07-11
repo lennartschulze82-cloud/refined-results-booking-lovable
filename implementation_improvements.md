@@ -14,10 +14,10 @@
 | 1 | Navigation & wayfinding | 7 | 0 |
 | 2 | New sections (trust + conversion) | 18 | 0 |
 | 3 | Section refinements | 24 | 0 |
-| 4 | Visual identity & polish | 14 | 0 |
+| 4 | Visual identity & polish | 14 | 12 |
 | 5 | Accessibility | 9 | 0 |
 | 6 | Performance & SEO (frontend) | 10 | 0 |
-| **Total** | | **90** | **0** |
+| **Total** | | **90** | **12** |
 
 _Update the Done column as checkboxes are completed._
 
@@ -160,28 +160,28 @@ _Update the Done column as checkboxes are completed._
 
 ### 4.1 Design system consistency
 
-- [ ] Extract repeated CTA styles into shared `BookButton` component (or extend `button.tsx` variant)
-- [ ] Extract section label pattern (11px uppercase tracking) into reusable `SectionLabel` component
-- [ ] Unify spacing rhythm across sections (audit `py-20` / `py-28` / `gap` values)
+- [x] Extract repeated CTA styles into shared `BookButton` component (or extend `button.tsx` variant)
+- [x] Extract section label pattern (11px uppercase tracking) into reusable `SectionLabel` component
+- [x] Unify spacing rhythm across sections (audit `py-20` / `py-28` / `gap` values)
 
 ### 4.2 Editorial details
 
-- [ ] Add section index labels (`01 — Consultations`, `02 — The Physician`, etc.)
-- [ ] Use `hairline` utility more deliberately between major blocks
-- [ ] Introduce subtle asymmetric grid on one section (e.g. testimonials image bleed)
-- [ ] Review bordeaux accent usage — ensure it marks actions and emphasis only
+- [x] Add section index labels (`01 — Consultations`, `02 — The Physician`, etc.)
+- [x] Use `hairline` utility more deliberately between major blocks
+- [x] Introduce subtle asymmetric grid on one section (e.g. testimonials image bleed)
+- [x] Review bordeaux accent usage — ensure it marks actions and emphasis only
 
 ### 4.3 Typography & colour
 
-- [ ] Clarify Hero `<em className="not-italic text-primary">` — rename or use `<span>` for clarity
-- [ ] Audit muted-foreground contrast on 11px labels
-- [ ] Remove unused `.dark` theme block from `styles.css` OR implement toggle (recommend remove for clinic brand)
-- [ ] Confirm font weights loaded match actual usage (trim Google Fonts request if possible)
+- [x] Clarify Hero `<em className="not-italic text-primary">` — rename or use `<span>` for clarity
+- [x] Audit muted-foreground contrast on 11px labels
+- [-] Remove unused `.dark` theme block from `styles.css` OR implement toggle (recommend remove for clinic brand) — kept by choice
+- [x] Confirm font weights loaded match actual usage (trim Google Fonts request if possible)
 
 ### 4.4 Error & empty states
 
-- [ ] Restyle `NotFoundComponent` in `__root.tsx` to match serif headline + cream palette
-- [ ] Restyle `ErrorComponent` in `__root.tsx` to match brand
+- [x] Restyle `NotFoundComponent` in `__root.tsx` to match serif headline + cream palette
+- [x] Restyle `ErrorComponent` in `__root.tsx` to match brand
 
 **Files:** `styles.css`, `__root.tsx`, new shared components in `src/components/site/`
 
@@ -259,22 +259,22 @@ _Adjust timeline to your pace. Phases 0–1 should not be skipped._
 
 | File | Action |
 |------|--------|
-| `src/components/site/Nav.tsx` | Modify — desktop + mobile nav |
-| `src/components/site/Hero.tsx` | Modify — trust line, scroll cue |
-| `src/components/site/Treatments.tsx` | Modify — cards, pricing, learn more |
-| `src/components/site/Trust.tsx` | Modify — bio, captions, credentials |
-| `src/components/site/Testimonials.tsx` | Modify — carousel, rating strip |
-| `src/components/site/Footer.tsx` | Modify — booking block, legal links |
+| `src/components/site/Nav.tsx` | Modify — desktop + mobile nav · Phase 4: `BookButton`, `hairline` |
+| `src/components/site/Hero.tsx` | Modify — trust line, scroll cue · Phase 4: `BookButton`, `<span>` accent |
+| `src/components/site/Treatments.tsx` | Modify — cards, pricing, learn more · Phase 4: `SectionLabel`, `BookButton`, spacing |
+| `src/components/site/Trust.tsx` | Modify — bio, captions, credentials · Phase 4: `SectionLabel`, spacing |
+| `src/components/site/Testimonials.tsx` | Modify — carousel, rating strip · Phase 4: image bleed, `SectionLabel` |
+| `src/components/site/Footer.tsx` | Modify — booking block, legal links · Phase 4: `SectionLabel`, `BookButton` |
 | `src/components/site/FAQ.tsx` | **New** |
 | `src/components/site/Process.tsx` | **New** |
 | `src/components/site/Credentials.tsx` | **New** (optional — can live in Trust) |
 | `src/components/site/Location.tsx` | **New** (optional — can live in Footer) |
 | `src/components/site/MobileBookBar.tsx` | **New** |
-| `src/components/site/BookButton.tsx` | **New** |
-| `src/components/site/SectionLabel.tsx` | **New** |
+| `src/components/site/BookButton.tsx` | **New** ✓ (Phase 4) |
+| `src/components/site/SectionLabel.tsx` | **New** ✓ (Phase 4) |
 | `src/routes/index.tsx` | Modify — compose new sections |
-| `src/routes/__root.tsx` | Modify — meta, schema, error pages, skip link |
-| `src/styles.css` | Modify — scroll-margin, remove dark mode, polish |
+| `src/routes/__root.tsx` | Modify — meta, schema, error pages, skip link · Phase 4: error pages, font trim |
+| `src/styles.css` | Modify — scroll-margin, remove dark mode, polish · Phase 4: `hairline-top`, `section-padding`, muted contrast |
 | `src/assets/dr-whitfield.jpg` | **Replace** |
 
 ---
@@ -329,7 +329,7 @@ _Use this table to track progress across sessions._
 | Date | Session focus | Items completed | Notes |
 |------|---------------|-----------------|-------|
 | 2026-07-11 | Plan created | 0 / 90 | Frontend brainstorm consolidated into this doc |
-| | | | |
+| 2026-07-11 | Phase 4 — visual identity & polish | 12 / 90 | `BookButton`, `SectionLabel`, numbered labels, hairline utilities, bordeaux restraint, error pages; dark mode kept `[-]` |
 | | | | |
 
 ---

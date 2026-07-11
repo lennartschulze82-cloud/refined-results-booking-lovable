@@ -1,4 +1,5 @@
 import heroImg from "@/assets/hero.jpg";
+import { BookButton } from "@/components/site/BookButton";
 
 export function Hero() {
   return (
@@ -10,18 +11,13 @@ export function Hero() {
           </p>
           <h1 className="font-serif text-5xl leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl">
             Refined results,<br />
-            <em className="not-italic text-primary">naturally you.</em>
+            <span className="text-primary">naturally you.</span>
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             Consultant-led aesthetic medicine for those who prefer precision over trend.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-6">
-            <a
-              href="#book"
-              className="rounded-sm bg-primary px-6 py-3.5 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Book a Consultation
-            </a>
+            <BookButton size="hero" />
             <a
               href="#treatments"
               className="text-sm underline decoration-border decoration-1 underline-offset-[6px] transition-colors hover:decoration-primary"
